@@ -3,7 +3,6 @@ package com.example.demoMongoDBfront.services;
 import java.util.Arrays;
 import java.util.List;
 
-import com.example.demoMongoDBfront.models.User;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
