@@ -29,4 +29,7 @@ public class MovieService {
         }
     }
 
+    public Movie getMovie(String id) {
+        return this.restTemplate.getForObject("http://localhost:8080/movie/{id}", Movie.class, id);
+    }
 }
