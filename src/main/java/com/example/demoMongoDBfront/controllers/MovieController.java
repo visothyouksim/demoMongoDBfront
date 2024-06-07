@@ -20,7 +20,7 @@ public class MovieController {
     @Autowired
     RestClient.Builder restClientBuilder;
 
-    @GetMapping("/movies")
+    @GetMapping("/allMovies")
     public String allMovies(Model model) {
         List<Movie> movie = movieService.getMovies("movies");
         model.addAttribute("movies", movie);

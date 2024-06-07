@@ -10,7 +10,7 @@ import com.example.demoMongoDBfront.models.User;
 
 @Service
 public class UserService {
-    
+
     RestTemplate restTemplate;
 
     public UserService(RestTemplate restTemplate) {
@@ -19,7 +19,16 @@ public class UserService {
 
     public List<User> getUsers(String name) {
         User[] usersArray = this.restTemplate.getForObject("http://localhost:8080/{name} ", User[].class, name);
-        
+
         return Arrays.asList(usersArray);
     }
+
+    public void addUser(User user) {
+        try {
+            this.restTemplate.postForObject("http://localhost:27017/movies_db/users", user, User.class);
+        } catch (Exception e) {
+            System.err.println("Error adding user: " + e.getMessage());
+        }
+    }
+
 }
