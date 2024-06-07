@@ -25,7 +25,7 @@ public class UserService {
 
     public void addUser(User user) {
         try {
-            this.restTemplate.postForObject("http://localhost:27017/movies_db/users", user, User.class);
+            this.restTemplate.postForObject("http://localhost:8080/addUser", user, User.class);
         } catch (Exception e) {
             System.err.println("Error adding user: " + e.getMessage());
         }
