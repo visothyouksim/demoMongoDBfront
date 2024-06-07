@@ -1,4 +1,4 @@
-package com.example.demoMongoDBfront.models;
+package com.example.demoMongoDBfront.model;
 
 public class Movie {
 

@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.demoMongoDBfront.models.User;
+import com.example.demoMongoDBfront.model.User;
 
 @Service
 public class UserService {

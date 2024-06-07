@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestClient;
 
-import com.example.demoMongoDBfront.models.User;
+import com.example.demoMongoDBfront.model.User;
 import com.example.demoMongoDBfront.services.UserService;
 
 @Controller

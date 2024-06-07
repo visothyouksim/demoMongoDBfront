@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestClient;
 
-import com.example.demoMongoDBfront.models.Movie;
+import com.example.demoMongoDBfront.model.Movie;
 import com.example.demoMongoDBfront.services.MovieService;
 
 @Controller
