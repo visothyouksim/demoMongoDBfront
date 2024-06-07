@@ -21,4 +21,12 @@ public class CategoryService {
         return Arrays.asList(categoriesArray);
     }
 
+    public void addCategory(Category category) {
+        try {
+            this.restTemplate.postForObject("http://localhost:8080/addCategory", category, Category.class);
+        } catch (Exception e) {
+            System.err.println("Error adding user: " + e.getMessage());
+        }
+    }
+
 }

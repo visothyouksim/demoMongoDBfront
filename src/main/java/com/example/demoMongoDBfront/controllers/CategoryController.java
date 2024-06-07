@@ -2,10 +2,13 @@ package com.example.demoMongoDBfront.controllers;
 
 import java.util.List;
 
+import com.example.demoMongoDBfront.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestClient;
 
 import com.example.demoMongoDBfront.model.Category;
@@ -27,11 +30,17 @@ public class CategoryController {
         return "categories";
     }
 
-//    @GetMapping("/addCategory")
-//    public String addCategoryForm(Model model) {
-//        Category newCategory = new Category("");
-//        model.addAttribute("category", newCategory);
-//        return "addCategory";
-//    }
+    @GetMapping("/addCategory")
+    public String addCategoryForm(Model model) {
+        Category newCategory = new Category("");
+        model.addAttribute("category", newCategory);
+        return "addCategory";
+    }
+
+    @PostMapping("/addCategory")
+    public String addCategory(@ModelAttribute Category category) {
+        categoryService.addCategory(category);
+        return "redirect:/allCategories";
+    }
 
 }
