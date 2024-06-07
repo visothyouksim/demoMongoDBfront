@@ -3,6 +3,7 @@ package com.example.demoMongoDBfront.services;
 import java.util.Arrays;
 import java.util.List;
 
+import com.example.demoMongoDBfront.models.User;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -19,6 +20,14 @@ public class MovieService {
         Movie[] moviesArray = this.restTemplate.getForObject("http://localhost:8080/{name}", Movie[].class, name);
 
         return Arrays.asList(moviesArray);
+    }
+
+    public void addMovie(Movie movie) {
+        try {
+            this.restTemplate.postForObject("http://localhost:8080/addMovie", movie, Movie.class);
+        } catch (Exception e) {
+            System.err.println("Error adding user: " + e.getMessage());
+        }
     }
 
 }
